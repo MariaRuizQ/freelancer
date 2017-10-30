@@ -216,3 +216,31 @@ body{
   border: solid 2px;
   border-color: #18bc9c;
 }
+
+.parte-4{
+  width: 100%;
+  background-color: white;
+  text-align: center;
+  color: black;
+  padding: 50px;
+}
+
+.parte-4 form{
+  color: #212529;
+  text-decoration: none;
+}
+
+.parte-4 form div{
+  margin: 0;
+  font-size: 20px;
+  line-height: 2;
+  color:  #212529;
+  text-decoration: none;
+}
+
+.parte-4 form div div{
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 20px;
+}
