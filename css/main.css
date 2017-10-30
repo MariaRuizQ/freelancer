@@ -1,29 +1,99 @@
 body{
   margin: 0;
+  width: 100%;
 }
-
+/*Creamos una clase para poner en mayúsculas, las palabras que necesito*/
 .text-upp{
   text-transform: uppercase;
 }
 
+hr.estrella-blanca{
+  max-width: 300px;
+  height: 2px;
+  padding: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: solid 2px;
+  text-align: center;
+  border-color:white;
+  background-color: white;
+  overflow: visible;
+}
+
+hr.estrella-blanca:after{
+  box-sizing: border-box;
+  font-family: 'FontAwesome';
+  content: "\f005";
+  padding:20px;
+  bottom: 38px;
+  color: white;
+  background-color:#18bc9c;
+  display: inline-block;
+  position: relative;
+  font-size: 40px;
+}
+
+hr.estrella-oscura{
+  max-width: 300px;
+  height: 2px;
+  padding: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: solid 2px;
+  text-align: center;
+  border-color:#212529;
+  background-color: #212529;
+  overflow: visible;
+}
+
+hr.estrella-oscura:after{
+  box-sizing: border-box;
+  font-family: 'FontAwesome';
+  content: "\f005";
+  padding:20px;
+  bottom: 38px;
+  color: #212529;
+  background-color:white;
+  display: inline-block;
+  position: relative;
+  font-size: 40px;
+}
+
+
+
 
 /*header*/
+/*
+Aplicamos a toda la cabecera, el padding, el ancho,
+el color de fondo, el tipo de letra, el alto,
+*/
 .cabecera{
-  padding: 0;
+
   width: 100%;
   height: 80px;
   background-color: #2c3e50;
   font-family: 'Montserrat', sans-serif;
-  font-weight: 400;
+  font-weight: 700;
   display: table;
-  overflow: hidden;
+  overflow: hidden; /*aplico esto, para que se recorte, pero mi contenido se mantenga visible*/
+  position: fixed; /*le doy una posición fija a mi cabecera*/
+  z-index: 1000;
 }
-
+/*
+Aplico al div, que engloba todo el contenido del header
+*/
 .contenedor:before, .contenedor:after{
-  display: table;
+  display: table; /*definimos un cuadro a nivel del bloque*/
   content: "";
 }
 
+/*Fijamos los bloques que deseamos se mantengan dentro de ellos,
+para que al aplicar position no salgan de ahí
+*/
 .fijando-cajas:before, .fijando-cajas:after{
   display: table;
   content: "";
@@ -52,6 +122,7 @@ body{
 
 .cabecera .barra-menu{
   float: right;
+  font-size: 14px;
 }
 
 .cabecera .barra-menu ul{
@@ -89,10 +160,12 @@ body{
 
 .cuerpo{
   width: 100%;
-
 }
 
 .parte-1{
+  font-family:'Montserrat', sans-serif;
+  width: 100%;
+  padding-top: 150px; /*le aplico un padding, para bajar el contenido, ya que al hacer estatic la cabecera, este se mueve hacia arriba*/
   background-color: #18bc9c;
   text-align: center;
   color: white;
@@ -103,42 +176,53 @@ body{
 }
 
 .parte-1 h1{
-  font-size: 50px;
-  font-family: 'Montserrat', sans-serif;
+  font-size: 80px;
+  font-weight: 700;
+}
+
+.contenido-1 p{
+  padding-top: 50px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 33px;
 }
 
 .parte-2{
+  width: 100%;
   background-color: white;
   text-align: center;
   color: #212529;
-  padding-left: 100px;
-  padding-right: 100px;
+
 }
 
 .parte-2 h1{
-  font-size: 30px;
+  font-size: 60px;
   font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: black;
 }
 
 .imagenes{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  padding-left: 100px;
+  padding-right: 100px;
 }
 
 .imagen-click a{
   position: relative;
   display: block;
   max-width: 350px;
-  margin-left: 20px;
-  margin-bottom: 20px;
+  padding-left: 20px;
+  padding-bottom: 20px;
 }
 
 .imagen-click a img{
   width: 350px;
   height: 200px;
-  margin-left: 20px;
-  margin-bottom: 20px;
+  padding-left: 20px;
+  padding-bottom: 20px;
   position: static;
 }
 
@@ -156,7 +240,7 @@ body{
   height: 200px;
   display: table;
   margin-left: 20px;
-  opacity: 0.6;
+  opacity: 0.8;
 }
 
 .icono-lupa{
@@ -173,7 +257,17 @@ body{
   background-color: #18bc9c;
   text-align: center;
   color: white;
-  padding: 50px;
+  padding-top: 70px;
+  padding-bottom: 90px;
+}
+
+.parte-3 h2{
+
+  font-size: 50px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: white;
+
 }
 
 .parte-3 .parra-descarga div{
@@ -185,10 +279,14 @@ body{
 .parte-3 .parra-descarga div p{
   position: relative;
   display: block;
-  max-width: 400px;
+  max-width: 350px;
+  max-height: 100px;
   margin-left: 20px;
   margin-bottom: 20px;
+  padding-bottom: 50px;
   text-align: left;
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
 }
 
 .parte-3 .parra-descarga div a{
@@ -221,26 +319,136 @@ body{
   width: 100%;
   background-color: white;
   text-align: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.parte-4 h1{
+  font-size: 50px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
   color: black;
-  padding: 50px;
 }
 
 .parte-4 form{
-  color: #212529;
-  text-decoration: none;
+  padding: 20px;
+
 }
 
-.parte-4 form div{
-  margin: 0;
-  font-size: 20px;
-  line-height: 2;
-  color:  #212529;
-  text-decoration: none;
+input{
+  width: 700px;
+  height: 80px;
+  font-family: 'Lato', sans-serif;
+  color: silver;
+  opacity: 0.5;
+  font-weight: 500;
+  font-size: 30px;
+  border: none;
+  border-bottom: 1px solid silver;
 }
 
-.parte-4 form div div{
-  display: block;
+.mensaje{
+  padding-bottom: 200px;
+}
+
+button{
+  background-color: #18bc9c;
+  color: white;
+  padding: 15px;
+  border: 0;
+  border-radius: 5px;
+  margin-right: 600px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 25px;
+}
+
+button:hover{
+  opacity: 1.2;
+}
+
+/*footer*/
+
+footer{
   width: 100%;
+  background-color: #2c3e50;
+  text-align: center;
+  color: white;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+footer div{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: white;
+}
+
+.final{
+  position: relative;
+  display: block;
+  width: 400px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+footer div div h3{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+}
+
+.final p{
+  font-family: 'Lato', sans-serif;
+  font-size: 24px;
+}
+/*iconos*/
+.final ul{
+  position: relative;
+  list-style: none;
+}
+
+.final ul li{
+  float: left;
+  display: table;
+  padding: 25px 0;
+  text-align: center;
+
+}
+
+.final ul li a{
+  color: white;
+  display: block;
+  width: 30px;
+  height: 30px;
   padding: 10px;
+  margin-left: 10px;
+  text-decoration: none;
+  background-color: transparent;
   font-size: 20px;
+  border: solid 2px;
+  border-color: white;
+  border-radius: 50%;
+ -moz-border-radius: 50%;
+ -webkit-border-radius:50%;
+}
+
+.final ul li a:hover{
+  color: #18bc9c;
+  background-color: white;
+}
+
+.final p a{
+  text-decoration: none;
+  color: #18bc9c;
+}
+
+.final p a:hover{
+  text-decoration:underline;
+}
+
+footer p{
+  font-family: 'Lato', sans-serif;
+  font-size: 18px;
 }
