@@ -84,3 +84,86 @@ body{
   color: white;
   border-radius: 10px;
 }
+
+/*main*/
+
+.cuerpo{
+  width: 100%;
+
+}
+
+.parte-1{
+  background-color: #18bc9c;
+  text-align: center;
+  color: white;
+}
+
+.contenido-1{
+  padding: 20px;
+}
+
+.parte-1 h1{
+  font-size: 50px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.parte-2{
+  background-color: white;
+  text-align: center;
+  color: #212529;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.parte-2 h1{
+  font-size: 30px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.imagenes{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.imagen-click a{
+  position: relative;
+  display: block;
+  max-width: 350px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.imagen-click a img{
+  width: 350px;
+  height: 200px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  position: static;
+}
+
+.imagen-lupa{
+  display: table;
+  height: 200px;
+  position: absolute;
+}
+
+.imagen-lupa:hover{
+  color: white;
+  position: absolute;
+  background-color: #18bc9c;
+  width: 350px;
+  height: 200px;
+  display: table;
+  margin-left: 20px;
+  opacity: 0.6;
+}
+
+.icono-lupa{
+  position: relative;
+  width: 350px;
+  margin-left: 20px;
+  display: table-cell;
+  vertical-align: middle;
+  z-index: -1000;
+}
